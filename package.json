@@ -1,0 +1,11 @@
+{
+  "name": "api-gym-managment",
+  "version": "1.0.0",
+  "description": "API para administrar una cadena de gimnasios",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SQL-Slayer",
+  "license": "ISC"
+}
