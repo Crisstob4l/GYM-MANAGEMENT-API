@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 // Definición del esquema que es el equivalente a la tabla en sql con sus atributos
 const DetalleVentaSchema = new Schema({
     idDetalleVenta: Number,
@@ -10,4 +9,5 @@ const DetalleVentaSchema = new Schema({
     venta: { type: Schema.Types.ObjectId, ref: 'Venta' }
 });
 
-module.exports = mongoose.model('DetalleVenta', DetalleVentaSchema);    // Lo mismo, exportamos con el nombre 'DetalleVenta' para usar el exquema
+const DetalleVenta = mongoose.model('DetalleVenta', DetalleVentaSchema)   // Lo mismo, exportamos con el nombre 'DetalleVenta' para usar el exquema
+export default DetalleVenta;

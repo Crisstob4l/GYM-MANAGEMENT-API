@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 // Lo mismo que en los anteriores JAJAJ 
 
@@ -10,4 +10,6 @@ const GimnasioSchema = new Schema({
     empleados: [{ type: Schema.Types.ObjectId, ref: 'Empleado' }]
 });
 
-module.exports = mongoose.model('Gimnasio', GimnasioSchema);
+
+const Gimnasio = mongoose.model('Gimnasio', GimnasioSchema)
+export default Gimnasio;

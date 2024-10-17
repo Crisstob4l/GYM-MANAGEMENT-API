@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const MembresiaSchema = new Schema({
     idMembresia: Number,
@@ -11,4 +11,6 @@ const MembresiaSchema = new Schema({
     gimnasios: [{ type: Schema.Types.ObjectId, ref: 'Gimnasio' }]
 });
 
-module.exports = mongoose.model('Membresia', MembresiaSchema);
+
+const Membresia = mongoose.model('Membresia', MembresiaSchema);
+export default Membresia;

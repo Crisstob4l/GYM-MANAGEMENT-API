@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const VentaSchema = new Schema({
     idVenta: Number,
@@ -9,4 +9,6 @@ const VentaSchema = new Schema({
     detalles: [{ type: Schema.Types.ObjectId, ref: 'DetalleVenta' }]
 });
 
-module.exports = mongoose.model('Venta', VentaSchema);
+
+const Venta = mongoose.model('Venta', VentaSchema);
+export default Venta;
