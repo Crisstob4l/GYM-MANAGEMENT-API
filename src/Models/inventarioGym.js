@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const InventarioGymSchema = new Schema({
     idInventarioGym: Number,
@@ -8,4 +8,5 @@ const InventarioGymSchema = new Schema({
     suplemento: { type: Schema.Types.ObjectId, ref: 'Suplemento' }
 });
 
-module.exports = mongoose.model('InventarioGym', InventarioGymSchema);
+const InventarioGym = mongoose.model('InventarioGym', InventarioGymSchema);
+export default InventarioGym;

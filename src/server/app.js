@@ -1,17 +1,29 @@
-require("dotenv").config();
-const bodyParser = require('body-parser'); // Para poder pasar los datos a un formato más manejable
-const express = require("express");
-const mongoose = require('mongoose'); // Importar mongoose para conectar a MongoDB
+import dotenv from 'dotenv';
+dotenv.config();
+import bodyParser from 'body-parser';  // Para poder pasar los datos a un formato más manejable
+import express from 'express';  // importamos los mudulos de express
+import mongoose from 'mongoose'; // Importar mongoose para conectar a MongoDB
+import empleadoRouter from '../Routers/empleado.Router.js';  // Ahora incluye la extensión .js
+
 const app = express();
 
 app.use(express.json());
 app.use(bodyParser.json()); // Parseamos el body a formato JSON
 
 
+
 // Conectar a MongoDB
 mongoose.connect(process.env.MONGO_URL, {
   dbName: process.env.MONGO_DB_NAME
 });
+
+
+// Creamos las rutas
+app.use('/api', empleadoRouter);
+
+
+
+
 
 // Conexión a la base de datos de MongoDB
 const db = mongoose.connection;

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const SuplementoSchema = new Schema({
     idSuplemento: Number,
@@ -9,4 +9,6 @@ const SuplementoSchema = new Schema({
     inventarios: [{ type: Schema.Types.ObjectId, ref: 'InventarioGym' }]
 });
 
-module.exports = mongoose.model('Suplemento', SuplementoSchema);
+
+const Suplemento = mongoose.model('Suplemento', SuplementoSchema);
+export default Suplemento;

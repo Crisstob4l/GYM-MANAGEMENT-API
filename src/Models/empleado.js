@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 const EmpleadoSchema = new Schema({
     idEmpleado: Number,
@@ -13,4 +13,5 @@ const EmpleadoSchema = new Schema({
     gimnasios: [{ type: Schema.Types.ObjectId, ref: 'Gimnasio' }]
 });
 
-module.exports = mongoose.model('Empleado', EmpleadoSchema);    // exportamos para poder usarlo con el nombre 'Empleado'
+const Empleado = mongoose.model('Empleado', EmpleadoSchema);    // exportamos para poder usarlo con el nombre 'Empleado'
+export default Empleado;
