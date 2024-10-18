@@ -7,7 +7,7 @@ export const crearEmpleado = async (req, res) => {
         nombre, 
         apellidoPaterno, 
         apellidoMaterno, 
-        tipo, 
+        cargo, 
         sueldo, 
         telefono, 
         telefonoEmergencia,
@@ -21,7 +21,7 @@ export const crearEmpleado = async (req, res) => {
     } = req.body;
 
     // Validamos que los datos estén completos
-    if (!nombre || !apellidoPaterno || !apellidoMaterno || !tipo || !sueldo || !telefono || !turno || !fechaNacimiento || !email || !direccion) {
+    if (!nombre || !apellidoPaterno || !apellidoMaterno || !cargo || !sueldo || !telefono || !turno || !fechaNacimiento || !email || !direccion) {
         return res.status(400).json({ Message: 'Necesario llenar todos los campos' });
     }
 
@@ -30,7 +30,7 @@ export const crearEmpleado = async (req, res) => {
         nombre,
         apellidoPaterno,
         apellidoMaterno,
-        tipo,
+        cargo,
         sueldo,
         telefono,
         telefonoEmergencia,
