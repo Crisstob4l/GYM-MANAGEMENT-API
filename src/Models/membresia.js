@@ -1,16 +1,9 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
-const MembresiaSchema = new Schema({
-    idMembresia: Number,
-    tipo: String,
-    precio: Number,
-    fechaInicio: Date,
-    fechaFinal: Date,
-    cliente: { type: Schema.Types.ObjectId, ref: 'Cliente' },
-    gimnasios: [{ type: Schema.Types.ObjectId, ref: 'Gimnasio' }]
+const membresiaSchema = new Schema({
+  cliente: { type: Schema.Types.ObjectId, ref: 'Cliente', required: true },
+  tipoMembresia: { type: Schema.Types.ObjectId, ref: 'TipoMembresia', required: true }
 });
 
-
-const Membresia = mongoose.model('Membresia', MembresiaSchema);
-export default Membresia;
+export default model('Membresia', membresiaSchema);

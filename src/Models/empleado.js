@@ -1,17 +1,20 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
-const EmpleadoSchema = new Schema({
-    idEmpleado: Number,
-    nombre: String,
-    apellidoPaterno: String,
-    apellidoMaterno: String,
-    tipo: String, // intendentes, entrenadores, encargados
-    sueldo: Number, // En Shein-tavos please :3
-    telefono: String,
-    turno: String,  // Mañana - Tarde
-    gimnasios: [{ type: Schema.Types.ObjectId, ref: 'Gimnasio' }]
+const empleadoSchema = new Schema({
+  nombre: { type: String, required: true },
+  apellidoPaterno: { type: String, required: true },
+  apellidoMaterno: { type: String, required: true },
+  tipo: { type: String, required: true },  // Ej. intendente, entrenador
+  sueldo: { type: Number, required: true },
+  telefono: { type: String, required: true },
+  telefonoEmergencia: { type: String },
+  direccion: { type: String },
+  fechaNacimiento: { type: Date },
+  genero: { type: String },
+  email: { type: String, required: true },
+  nss: { type: String },
+  gimnasios: [{ type: Schema.Types.ObjectId, ref: 'Gimnasio' }]  // Relaciones
 });
 
-const Empleado = mongoose.model('Empleado', EmpleadoSchema);    // exportamos para poder usarlo con el nombre 'Empleado'
-export default Empleado;
+export default model('Empleado', empleadoSchema);   // exportamos para usarlo donde sea necesario

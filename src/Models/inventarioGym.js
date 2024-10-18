@@ -1,12 +1,10 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
-const InventarioGymSchema = new Schema({
-    idInventarioGym: Number,
-    cantidad: Number,
-    gimnasio: { type: Schema.Types.ObjectId, ref: 'Gimnasio' },
-    suplemento: { type: Schema.Types.ObjectId, ref: 'Suplemento' }
+const inventarioGymSchema = new Schema({
+  cantidadExistencia: { type: Number, required: true },
+  gimnasio: { type: Schema.Types.ObjectId, ref: 'Gimnasio', required: true },
+  suplemento: { type: Schema.Types.ObjectId, ref: 'Suplemento', required: true }
 });
 
-const InventarioGym = mongoose.model('InventarioGym', InventarioGymSchema);
-export default InventarioGym;
+export default model('InventarioGym', inventarioGymSchema);

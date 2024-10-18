@@ -1,15 +1,12 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
-// Lo mismo que en los anteriores JAJAJ 
-
-const GimnasioSchema = new Schema({
-    idGimnasio: Number,
-    direccion: String,
-    telefono: String,
-    empleados: [{ type: Schema.Types.ObjectId, ref: 'Empleado' }]
+const gimnasioSchema = new Schema({
+  direccion: { type: String, required: true },
+  telefono: { type: String, required: true },
+  horarioApertura: { type: String, required: true },
+  horarioCierre: { type: String, required: true },
+  empleados: [{ type: Schema.Types.ObjectId, ref: 'Empleado' }]  // Relación inversa
 });
 
-
-const Gimnasio = mongoose.model('Gimnasio', GimnasioSchema)
-export default Gimnasio;
+export default model('Gimnasio', gimnasioSchema);
