@@ -5,7 +5,7 @@ const empleadoSchema = new Schema({
   nombre: { type: String, required: true },
   apellidoPaterno: { type: String, required: true },
   apellidoMaterno: { type: String, required: true },
-  tipo: { type: String, required: true },  // Ej. intendente, entrenador
+  cargo: { type: String, required: true },  // Ej. intendente, entrenador
   sueldo: { type: Number, required: true },
   telefono: { type: String, required: true },
   telefonoEmergencia: { type: String },
