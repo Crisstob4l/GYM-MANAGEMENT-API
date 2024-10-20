@@ -5,10 +5,14 @@ import express from 'express';  // importamos los mudulos de express
 import mongoose from 'mongoose'; // Importar mongoose para conectar a MongoDB
 import empleadoRouter from '../Routers/empleado.Router.js';  // Ahora incluye la extensión .js
 
+
+
 const app = express();
 
 app.use(express.json());
 app.use(bodyParser.json()); // Parseamos el body a formato JSON
+
+
 
 
 
