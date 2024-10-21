@@ -3,10 +3,13 @@ dotenv.config();
 import bodyParser from 'body-parser';  // Para poder pasar los datos a un formato más manejable
 import express from 'express';  // importamos los mudulos de express
 import mongoose from 'mongoose'; // Importar mongoose para conectar a MongoDB
+
 import empleadoRouter from '../Routers/empleado.Router.js';  // Ahora incluye la extensión .js
+import ventaRouter from '../Routers/venta.Router.js';
+
+
 
 const app = express();
-
 app.use(express.json());
 app.use(bodyParser.json()); // Parseamos el body a formato JSON
 
@@ -20,6 +23,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Creamos las rutas
 app.use('/api', empleadoRouter);
+app.use('/api', ventaRouter);
 
 
 
