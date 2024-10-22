@@ -100,7 +100,7 @@ export const eliminarCliente = async (req, res) => {
       // Si no tenemos cliente
       return res.status(404).json({ message: "Cliente no encontrado" });
     } // de lo contrario
-    res.json(cliente); // se manda el mensaje del cliente eliminado
+    res.json(cliente); // se manda el cliente eliminado
   } catch (error) {
     res.status(500).json({ message: error.message }); // mandamos el error
   }
