@@ -1,0 +1,3 @@
+[submodule "GYM-MANAGEMENT-API"]
+	path = GYM-MANAGEMENT-API
+	url = https://github.com/Crisstob4l/GYM-MANAGEMENT-API.git
