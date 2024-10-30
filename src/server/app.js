@@ -9,7 +9,7 @@ import ventaRouter from '../Routers/venta.Router.js';
 import clienteRouter from '../Routers/cliente.Router.js';
 import membresiaRouter from '../Routers/membresia.router.js';
 import inventarioGymRouter from '../Routers/inventarioGym.Routers.js';
-
+import historialMembresia from '../Routers/historialMembresia.Router.js';
 
 const app = express();
 app.use(express.json());
@@ -28,6 +28,7 @@ app.use('/api', ventaRouter);
 app.use('/api', clienteRouter);
 app.use('/api', membresiaRouter);
 app.use('/api', inventarioGymRouter);
+app.use('/api', historialMembresia);
 
 
 
