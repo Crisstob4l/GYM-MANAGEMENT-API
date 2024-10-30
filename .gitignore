@@ -2,3 +2,5 @@
 node_modules/
 README.md
 mongo/
+init-mongo.js
+docker-compose.yml

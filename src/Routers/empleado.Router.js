@@ -7,7 +7,8 @@ const router = Router();    // Para inicializa las rutas
 
 router.get('/empleados', obtenerEmpleados);  // definimos ruta para obtener all
 router.get('/empleados/:id', obtenerEmpleadosID) // para obtener por id
-router.post('/empleado', crearEmpleado);    // para crear
+router.post('/empleados', crearEmpleado);
+    // para crear
 router.put('/empleados/:id', actualizarEmpleado);   // para actualizar empleado
 
 
