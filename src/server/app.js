@@ -6,6 +6,7 @@ import mongoose from 'mongoose'; // Importar mongoose para conectar a MongoDB
 
 import empleadoRouter from '../Routers/empleado.Router.js';  // Ahora incluye la extensión .js
 import ventaRouter from '../Routers/venta.Router.js';
+import clienteRouter from '../Routers/cliente.Router.js';
 import tipoMembresiaRouter from '../Routers/tipoMembresia.Router.js';
 
 
@@ -24,6 +25,8 @@ mongoose.connect(process.env.MONGO_URL, {
 // Creamos las rutas
 app.use('/api', empleadoRouter);
 app.use('/api', ventaRouter);
+app.use('/api', clienteRouter);
+
 app.use('/api', tipoMembresiaRouter);
 
 
